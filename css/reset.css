@@ -8,7 +8,7 @@ a { color:#444; text-decoration:none; }
 h1,h2,h3,h4,h5,h6 { font-weight:400; font-size:14px; }
 i,em,address { font-style:normal; }
 ul { list-style:none; }
-button { display:inline-block; cursor:pointer; padding-top:4px; }
+button { display:inline-block; cursor:pointer;}
 .fixedclear:after { content:''; display:block; clear:both; } 
 .blind { display:block; text-indent:-2000px; overflow:hidden; }
 .hidden { display:none; }

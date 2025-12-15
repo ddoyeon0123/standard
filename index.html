@@ -20,6 +20,7 @@
     <meta property="og:image" content="html/img/com/kakao_link_icon.jpg" /> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- css -->
     <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="stylesheet" class="stylesheetClass" type="text/css" href="./css/style.css">
     <link rel="stylesheet" type="text/css" href="./css/responsive.css">
@@ -28,6 +29,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" 
+        crossorigin="anonymous">
+    </script>
 </head>
 
 <body>
@@ -53,7 +60,7 @@
                         <h2>정산 시스템 및 고객 지원 바로가기 ⬥</h2>
                         <p class="guide-text">고객 필수 서비스를 한눈에 확인하세요</p>
                         <div class="link-grid">
-                            <a href="#" class="grid-item primary-dark">
+                            <a href="https://customer.std-ums.com/login" class="grid-item primary-dark">
                                 <span class="icon-arrow">
                                     <i class="material-icons-round">arrow_outward</i>
                                 </span>
@@ -164,17 +171,24 @@
                             <h4>대표자</h4><p>이주호</p>
                             <h4>대표전화</h4><p>015-8504-0005</p>
                         </div>
-                        <div class="footer-family-site">
-                            <button type="button" class="family-site-button" aria-expanded="false" aria-controls="family-site-list">
-                                Family Site
-                                <span class="material-icons-round dropdown-arrow">expand_less</span> 
-                            </button>
+                        <div class="right-btn">
+                            <div class="footer-family-site">
+                                <button type="button" class="family-site-button" aria-expanded="false" aria-controls="family-site-list">
+                                    Family Site
+                                    <span class="material-icons-round">add</span>
+                                </button>
                             
-                            <ul class="family-site-list" id="family-site-list">
-                                <li><a href="#">싸다오</a></li>
-                                <li><a href="#">아레오</a></li>
-                                <li><a href="#">네띠앙</a></li>
-                            </ul>
+                                <ul class="family-site-list" id="family-site-list">
+                                    <li><a href="https://www.ssadao.com/com/main.vw">싸다오</a></li>
+                                    <li><a href="https://www.arreo.com/usr/com/index.vw">아레오</a></li>
+                                    <li><a href="https://www.netian.com/usr/com/index.vw">네띠앙</a></li>
+                                </ul>
+                            </div>
+                            <div class="topBtn">
+                                <button id="scrollToTopBtn" title="맨 위로 이동">
+                                    <span class="material-icons-round">arrow_upward</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                     <div class="footer-texts">
@@ -184,11 +198,10 @@
                         <p>copyright © STANDARD NETWORKS.INC.ALL RIGHTS RESERVED.</p>
                     </div>
                 </div>
-                
             </div>
         </footer>
     </div>
-    <script src="js/main.js"></script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
