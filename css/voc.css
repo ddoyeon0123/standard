@@ -1,0 +1,165 @@
+/* =======================================
+   VOC 페이지 스타일 (voc_submit.html, voc_check.html)
+   ======================================= */
+
+.voc-container {
+    max-width: var(--container-max-width);
+    margin: 150px auto;
+    padding: 0 82px;
+}
+
+.voc-title-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 36px;
+    margin-bottom: 50px;
+    border-bottom: 1px solid var(--color-gray-2);
+}
+
+.voc-title {
+    font-size: var(--font-headline-large);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black);
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.voc-subtitle {
+    font-size: var(--font-title-large);
+    color: var(--color-black);
+}
+
+.voc-status-link {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.btn-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: var(--font-title-small);
+    color: var(--color-gray-5);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.btn-status:hover {
+    color: var(--color-navy);
+}
+
+.btn-status .material-icons-round {
+    font-size: 2.0rem;
+    margin-left: 2px;
+}
+
+.voc-status-link p {
+    font-size: var(--font-label-small);
+    color: var(--color-gray-4);
+    line-height: 1.4;
+}
+
+.voc-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.form-group-inline {
+    display: flex;
+    gap: 20px;
+}
+
+.form-group-inline .form-item {
+    flex-basis: 50%;
+}
+
+.form-group-single {
+}
+
+.form-item,
+.form-group-single {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-item label,
+.form-group-single label {
+    font-size: var(--font-title-small);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-black);
+    margin-bottom: 8px;
+}
+
+.form-item.required label::after,
+.form-group-single.required label::after {
+    content: '*';
+    color: var(--color-red);
+    margin-left: 4px;
+}
+
+.voc-form input[type="text"],
+.voc-form input[type="tel"],
+.voc-form input[type="password"],
+.voc-form input[type="email"],
+.voc-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--color-gray-2);
+    border-radius: 8px;
+    font-size: var(--font-title-small);
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.voc-form input:focus,
+.voc-form textarea:focus {
+    border-color: var(--color-navy);
+    outline: none;
+}
+
+.voc-form textarea {
+    resize: vertical;
+    min-height: 180px;
+}
+
+
+.file-info {
+    font-size: var(--font-label-medium);
+    color: var(--color-gray-4);
+    display: flex;
+    align-items: center;
+}
+
+.form-item input[type="file"] {
+    display: none;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+.btn-submit {
+    padding: 12px 30px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-size: var(--font-title-medium);
+    font-weight: var(--font-weight-medium);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-navy);
+}
+
+.form-group-inline:nth-child(6) {
+    align-items: flex-end;
+}
