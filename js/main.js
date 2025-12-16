@@ -153,6 +153,11 @@ $(document).ready(function() {
                     return false;
                 }
             }
+
+            showModal('조회 완료', '요청하신 민원 접수 내역을 찾았습니다.\n조회 결과 페이지로 이동합니다.', null);
+            $('#modal-confirm-btn').on('click', function() {
+                window.location.href = './voc_view.html'; 
+            });
             
             // 2-2. 페이지별 추가 검사 
             if (isVocSubmitPage || isServicePage) {
