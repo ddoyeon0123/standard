@@ -47,7 +47,7 @@
                     <div class="voc-status-link">
                         <a href="./voc_submit.html" class="btn-status">
                             민원 접수 페이지
-                            <span class="material-icons-round">chevron_right</span>
+                            <span class="material-icons-round">arrow_outward</span>
                         </a>
                     </div>
                 </div>
@@ -56,51 +56,34 @@
                     
                     <div class="form-group-inline">
                         <div class="form-item required">
-                            <label for="writer">작성자</label>
-                            <input type="text" id="writer" name="writer" placeholder="이름" required>
+                            <label for="postNumber">게시글 번호</label>
+                            <input type="text" id="postNumber" name="postNumber" placeholder="게시글 번호를 입력해주세요.">
                         </div>
                         <div class="form-item required">
                             <label for="contact">연락처</label>
-                            <input type="tel" id="contact" name="contact" placeholder="'-'를 제외한 숫자" required>
+                            <input type="tel" id="contact" name="contact" placeholder="'-'를 제외한 숫자">
                         </div>
                     </div>
     
                     <div class="form-group-single required">
                         <label for="password">비밀번호</label>
-                        <input type="password" id="password" name="password" placeholder="6자리 미만 비밀번호" maxlength="6" required>
-                    </div>
-    
-                    <div class="form-group-single required">
-                        <label for="title">제목</label>
-                        <input type="text" id="title" name="title" placeholder="제목을 입력해주세요." required>
-                    </div>
-    
-                    <div class="form-group-single required">
-                        <label for="content">내용</label>
-                        <textarea id="content" name="content" rows="10" placeholder="문의 내용을 800자 이내로 상세히 작성해주세요." required></textarea>
-                    </div>
-    
-                    <div class="form-group-single required">
-                        <label for="email">이메일</label>
-                        <input type="email" id="email" name="email" placeholder="답변을 받으실 이메일을 입력해주세요." required>
-                    </div>
-    
-                    <div class="form-group-inline">
-                        <div class="form-item">
-                            <label for="attach-file">첨부파일</label>
-                            <input type="file" id="attach-file" name="attach-file" accept=".zip">
-                        </div>
-                        <div class="file-info">
-                            <p>.zip파일 형식만 가능합니다. 첨부파일의 크기를 20MB 이내로 첨부해주세요</p>
-                        </div>
+                        <input type="password" id="password" name="password" placeholder="비밀번호 6자리" maxlength="6" class="input-half">
                     </div>
                     
                     <div class="form-actions">
                         <button type="submit" class="btn-submit">등록하기</button>
                     </div>
                 </form>
+
+                <div id="alert-modal" class="modal-wrapper">
+                    <div class="modal-content">
+                        <h3 class="modal-title">입력 오류</h3>
+                        <p class="modal-message">이메일 주소를 올바른 형식으로 입력해주세요.</p>
+                        <div class="modal-actions"><button id="modal-confirm-btn" class="btn-modal-confirm">확인</button></div>
+                    </div>
+                </div>
             </div>
-            </main>
+        </main>
 
         <footer class="sn-footer">
             <div class="footer-wrap">
@@ -151,6 +134,9 @@
         </footer>
         
     </div>
+    <script>
+        $('#alert-modal').css('display', 'none');
+    </script>
 
     <script src="../../js/main.js"></script>
 </body>
