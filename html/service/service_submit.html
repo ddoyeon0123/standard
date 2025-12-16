@@ -1,11 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>서비스 신청하기 | 스탠다드네트웍스</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" class="stylesheetClass" type="text/css" href="../../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../../css/voc.css">
+
+    <link rel="stylesheet" type="text/css" href="../../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../../css/responsive.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
+        </script>
 </head>
+
 <body>
-    
+    <div class="sn-header-wrapper">
+        <header class="sn-header">
+            <a href="../../index.html">
+                <img src="../../img/gnb_logo.png" alt="STANDARD NETWORKS 로고">
+            </a>
+            <nav class="sn-nav">
+                <a href="../about.html">회사소개</a>
+                <a href="../business.html">사업분야</a>
+            </nav>
+        </header>
+    </div>
+
+    <div id="wrap">
+        <main>
+            <div class="voc-container">
+                <div class="voc-title-box">
+                    <div class="voc-text">
+                        <h1 class="voc-title">서비스 신청하기 ⬥</h1>
+                        <p class="voc-subtitle">이용 신청 및 상담하실 내용을 작성해주세요.</p>
+                    </div>
+                    <div class="voc-status-link">
+                        <p>서비스 이용 신청 및 상담에 대한 답변은 <b>이메일</b>로 발송됩니다. <br> 담당자가 내용을 확인 후 최대한 신속하게 연락드리겠습니다.</p>
+                    </div>
+                </div>
+
+                <form action="#" method="POST" class="voc-form">
+
+                    <h2>- 고객 정보</h2>
+                    <div class="form-group-inline">
+                        <div class="form-item required">
+                            <label for="writer">작성자</label>
+                            <input type="text" id="writer" name="writer" placeholder="이름">
+                        </div>
+                        <div class="form-item required">
+                            <label for="contact">연락처</label>
+                            <input type="tel" id="contact" name="contact" placeholder="'-'를 제외한 숫자">
+                        </div>
+                    </div>
+                    <div class="form-group-inline">
+                        <div class="form-item required">
+                            <label for="company">회사명</label>
+                            <input type="text" id="company" name="company" placeholder="회사명">
+                        </div>
+                        <div class="form-item required">
+                            <label for="email">이메일</label>
+                            <input type="email" id="email" name="email" placeholder="답변을 받으실 이메일을 입력해주세요.">
+                        </div>
+                    </div>
+
+                    <h2>- 신청 내용</h2>
+
+                    <div class="form-group-inline">
+
+                        <div class="form-item required">
+                            <label for="service-select">모집분야</label>
+
+                            <div id="service-select" class="custom-select">
+                                <div class="select-display" tabindex="0">
+                                    <span class="selected-value">서비스 선택</span>
+                                    <span class="material-icons-round expand-icon">expand_more</span>
+                                </div>
+
+                                <ul class="select-options">
+                                    <li data-value="sms" class="selected">SMS 서비스</li>
+                                    <li data-value="mms">MMS 서비스</li>
+                                    <li data-value="sfa">SFA 서비스</li>
+                                    <li data-value="ffa">FFA 서비스</li>
+                                    <li data-value="ai-counsel">AI 고객상담센터</li>
+                                    <li data-value="aimer">대량 메일(AIMER)</li>
+                                    <li data-value="ammer">웹 메일(AMMER)</li>
+                                    <li data-value="phone-number">Phone Number Mail</li>
+                                    <li data-value="ad-on">AD ON 서비스</li>
+                                    <li data-value="free-on">FREE ON 서비스</li>
+                                </ul>
+
+                                <input type="hidden" name="service" id="service-value" value="">
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <label class="request-label">자료요청</label>
+
+                            <div class="request-group">
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="request_data" value="proposal" id="req-proposal">
+                                    <span class="checkbox-display">
+                                        <span class="material-icons-round check-icon">done</span>
+                                    </span>
+                                    제안서
+                                </label>
+
+                                <label class="custom-checkbox">
+                                    <input type="checkbox" name="request_data" value="company_intro" id="req-intro">
+                                    <span class="checkbox-display">
+                                        <span class="material-icons-round check-icon">done</span>
+                                    </span>
+                                    회사소개서
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group-single required">
+                        <label for="title">제목</label>
+                        <input type="text" id="title" name="title" placeholder="제목을 입력해주세요.">
+                    </div>
+
+                    <div class="form-group-single required">
+                        <label for="content">내용</label>
+                        <textarea id="content" name="content" rows="10"
+                            placeholder="문의 내용을 800자 이내로 상세히 작성해주세요."></textarea>
+                    </div>
+
+                    <h2>- 약관 동의</h2>
+
+                    <div class="privacy-section">
+                        <p class="privacy-title">[ 개인정보 이용약관 ]</p>
+                        
+                        <div class="privacy-box">
+                            <ul>
+                                <li>수집 항목 : 이름, 비밀번호, 이메일, 전화번호, 휴대폰번호, 회원의 문의/답변 내용에 포함된 개인정보</li>
+                                <li>수집 목적 : 문의내역 확인과 답변 처리</li>
+                                <li>보유 기간 : 6개월간 보관 후 파기. 단, 상거래 관련 일반 문의는 3년, 거래취소/환불 관련 문의는 5년 보관 후 파기</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="privacy-consent">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" name="privacy_consent" value="Y" id="privacy-agree">
+                                <span class="checkbox-display">
+                                    <span class="material-icons-round check-icon">done</span>
+                                </span>
+                                개인정보 수집 및 이용에 동의합니다.
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="submit" class="btn-submit">등록하기</button>
+                    </div>
+                </form>
+
+                <div id="alert-modal" class="modal-wrapper">
+                    <div class="modal-content">
+                        <h3 class="modal-title">입력 오류</h3>
+                        <p class="modal-message">이메일 주소를 올바른 형식으로 입력해주세요.</p>
+                        <div class="modal-actions"><button id="modal-confirm-btn" class="btn-modal-confirm">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="sn-footer">
+            <div class="footer-wrap">
+                <div class="footer-logo">
+                    <img src="../../img/footer_logo.png" alt="">
+
+                    <div class="footer-bottom-links">
+                        <a href="#">개인정보처리방침</a>
+                        <a href="#">이용약관</a>
+                        <a href="#">이메일무단수집거부</a>
+                        <a href="#">사이트맵</a>
+                    </div>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-site">
+                        <div class="footer-texts">
+                            <h4>스탠다드네트웍스</h4>
+                            <p>서울시 강남구 봉은사로 18길 84 3층</p>
+                            <h4>대표자</h4>
+                            <p>이주호</p>
+                            <h4>대표전화</h4>
+                            <p>015-8504-0005</p>
+                        </div>
+                        <div class="right-btn">
+                            <div class="footer-family-site">
+                                <button type="button" class="family-site-button" aria-expanded="false"
+                                    aria-controls="family-site-list">
+                                    Family Site
+                                    <span class="material-icons-round">add</span>
+                                </button>
+                                <ul class="family-site-list" id="family-site-list">
+                                    <li><a href="https://www.ssadao.com/com/main.vw" target="_blank">싸다오</a></li>
+                                    <li><a href="https://www.arreo.com/usr/com/index.vw" target="_blank">아레오</a></li>
+                                    <li><a href="https://www.netian.com/usr/com/index.vw" target="_blank">네띠앙</a></li>
+                                </ul>
+                            </div>
+                            <div class="topBtn">
+                                <button id="scrollToTopBtn" title="맨 위로 이동">
+                                    <span class="material-icons-round">arrow_upward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-texts">
+                        <h4>대표 이메일</h4>
+                        <p>support@standard.kr</p>
+                    </div>
+                    <div class="footer-texts">
+                        <p>copyright © STANDARD NETWORKS.INC.ALL RIGHTS RESERVED.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script>
+        $('#alert-modal').css('display', 'none');
+    </script>
+
+    <script src="../../js/main.js"></script>
 </body>
+
 </html>

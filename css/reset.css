@@ -27,7 +27,7 @@ th,td { vertical-align:middle; }
 :root {
     /* 기본 색상 정의 */
     --color-black: #333333;
-    --color-white: #fafafa;
+    --color-white: #FBFBFB;
     --color-navy: #292864;
     --color-bg-surface: #ffffff;
     --color-red: #CB222B;

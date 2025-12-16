@@ -12,8 +12,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 36px;
-    margin-bottom: 50px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
     border-bottom: 1px solid var(--color-gray-2);
 }
 
@@ -63,7 +63,7 @@
 }
 
 .voc-status-link p {
-    font-size: var(--font-label-small);
+    font-size: var(--font-label-medium);
     color: var(--color-gray-4);
     line-height: 1.4;
     text-align: right;
@@ -74,12 +74,6 @@
     text-decoration: underline;
 }
 
-
-.voc-status-link p {
-    font-size: var(--font-label-small);
-    color: var(--color-gray-4);
-    line-height: 1.4;
-}
 
 .voc-form {
     display: flex;
@@ -123,6 +117,12 @@
   color: var(--color-gray-5);
   font-size: var(--font-title-small);
   font-weight: var(--font-weight-regular);
+}
+
+.voc-form > h2 {
+  font-size: var(--font-headline-small);
+  font-weight: bold;
+  margin-top: 40px;
 }
 
 .form-group-inline {
@@ -240,7 +240,7 @@
 }
 
 .input-half {
-    width: 50% !important;
+    width: 49% !important;
 }
 
 .form-actions {
@@ -263,9 +263,9 @@
     transform: translateY(-2px); 
 }
 
-/* =================================================== */
+/* ========================= */
 /* 모달 (팝업창) 스타일 */
-/* =================================================== */
+/* ========================= */
 
 .modal-wrapper {
     display: none;
@@ -326,4 +326,220 @@
 
 .btn-modal-confirm:hover {
     background-color: var(--color-black);
+}
+
+
+/* =================================================== */
+/* 커스텀 드롭다운 (아코디언 메뉴) 스타일 */
+/* =================================================== */
+
+.custom-select {
+    position: relative;
+    width: 49%;
+    font-size: var(--font-title-small);
+}
+
+.select-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 12px 15px;
+    border: 1px solid var(--color-gray-2);
+    border-radius: 8px;
+    background-color: var(--color-bg-surface);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.2s;
+    user-select: none;
+}
+
+.custom-select:focus-within .select-display,
+.select-display:focus {
+    border-color: var(--color-navy);
+}
+
+.select-display .expand-icon {
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.custom-select.is-open .select-display .expand-icon {
+    transform: rotate(180deg);
+}
+
+
+.select-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid var(--color-gray-2);
+    border-top: none; 
+    border-radius: 0 0 8px 8px;
+    background-color: var(--color-bg-surface);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 50;
+    
+    display: none; 
+}
+
+.custom-select.is-open .select-options {
+    display: block;
+}
+
+.select-options li {
+    padding: 12px 15px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+    font-size: var(--font-title-small);
+}
+
+.select-options li:hover {
+    background-color: var(--color-gray-1);
+}
+
+.select-options li.selected,
+.select-options li:first-child { 
+    background-color: var(--color-navy); 
+    color: var(--color-white);
+    font-weight: var(--font-weight-medium);
+}
+.select-options li.selected:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+}
+
+.select-options li:first-child {
+    border-radius: 0;
+}
+
+/* ========================= */
+/* 커스텀 체크박스 */
+/* ========================= */
+
+.request-label {
+    font-size: var(--font-title-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-black);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.request-group {
+    display: flex;
+    gap: 30px;
+}
+
+.custom-checkbox {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: var(--font-title-small);
+    color: var(--color-black);
+    user-select: none;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkbox-display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 17px;
+    height: 17px;
+    border: 1px solid var(--color-gray-5);
+    border-radius: 4px; 
+    background-color: var(--color-white);
+    margin-right: 8px; 
+    transition: all 0.1s ease-in-out;
+}
+
+.checkbox-display .check-icon {
+    font-size: 14px; 
+    color: var(--color-white);
+    opacity: 0; 
+    transition: opacity 0.1s;
+}
+
+
+.custom-checkbox input[type="checkbox"]:checked + .checkbox-display {
+    background-color: var(--color-navy);
+    border-color: var(--color-navy);
+}
+
+.custom-checkbox input[type="checkbox"]:checked + .checkbox-display .check-icon {
+    opacity: 1;
+}
+
+.custom-checkbox input[type="checkbox"]:focus + .checkbox-display {
+    box-shadow: 0 0 0 2px var(--color-gray-4); 
+}
+
+/* =================== */
+/* 개인정보 이용약관 */
+/* =================== */
+
+.privacy-section {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 14px 20px;
+}
+
+.privacy-title {
+    font-size: var(--font-title-small);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-black);
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.privacy-box {
+    border: 1px solid var(--color-gray-2);
+    padding: 20px;
+    border-radius: 4px;
+    background-color: var(--color-bg-surface); 
+}
+
+.privacy-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.privacy-box ul li {
+    font-size: var(--font-label-medium);
+    color: var(--color-gray-7);
+    line-height: 1.6;
+    margin-bottom: 5px;
+}
+.privacy-box ul li:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-consent {
+    display: flex;
+    justify-content: flex-end; 
+    margin-top: 20px;
+}
+
+.privacy-consent .custom-checkbox {
+    font-size: var(--font-label-medium);
+    color: var(--color-gray-7);
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px; 
 }

@@ -47,12 +47,13 @@ $(function() {
 });
 
 
-
 // -------------------
-// 유효성 검사
+// 유효성 검사 (VOC/서비스 통합 로직)
 // -------------------
 
 $(document).ready(function() {
+    
+    // 모달 팝업 표시 함수
     function showModal(title, message, fieldId) {
         $('#alert-modal .modal-title').text(title);
         $('#alert-modal .modal-message').text(message);
@@ -61,20 +62,29 @@ $(document).ready(function() {
         $('#modal-confirm-btn').off('click').on('click', function() {
             $('#alert-modal').css('display', 'none'); 
             if (fieldId) {
-                $('#' + fieldId).focus();
+                const $field = $('#' + fieldId);
+                if ($field.length && $field.is(':visible') && fieldId !== 'privacy-agree') {
+                    $field.focus();
+                } else if (fieldId === 'privacy-agree') {
+                    $('[for="privacy-agree"]').focus();
+                }
             }
         });
     }
 
-    // 현재 페이지가 'voc_submit.html' 접수 페이지인지, 조회 페이지인지 확인
+    // 현재 페이지 URL을 기반으로 페이지 종류 확인
     const currentPath = window.location.pathname;
-    const isSubmitPage = currentPath.includes('voc_submit.html');
-    const isCheckPage = currentPath.includes('voc_check.html');
+    const isVocSubmitPage = currentPath.includes('voc_submit.html'); 
+    const isVocCheckPage = currentPath.includes('voc_check.html');   
+    const isServicePage = currentPath.includes('service_submit.html') || document.title.includes('서비스 신청하기');
     
     let requiredFields = [];
 
-    if (isSubmitPage) {
-        // 민원 접수 페이지 필드 목록
+    // ===================================
+    // 1. 페이지별 필수 필드 정의 및 이벤트 설정
+    // ===================================
+
+    if (isVocSubmitPage) {
         requiredFields = [
             { id: 'writer', message: '작성자 이름을 입력해주세요.' },
             { id: 'contact', message: '연락처를 입력해주세요.' },
@@ -83,64 +93,217 @@ $(document).ready(function() {
             { id: 'content', message: '문의 내용을 입력해주세요.' },
             { id: 'email', message: '이메일 주소를 입력해주세요.' }
         ];
-
-        // 1. 연락처 필터링 
-        $('#contact').on('input', function() {
-            var sanitizedValue = $(this).val().replace(/[^0-9]/g, '');
-            $(this).val(sanitizedValue);
-        });
-
-        // 2. 문의 내용 800자 제한
-        $('#content').on('input', function() {
-            var maxLength = 800;
-            var currentLength = $(this).val().length;
-            if (currentLength > maxLength) {
-                $(this).val($(this).val().substring(0, maxLength));
-            }
-        });
-
-    } else if (isCheckPage) {
-        // 민원 조회 페이지 필드 목록
+    } else if (isVocCheckPage) {
         requiredFields = [
             { id: 'postNumber', message: '게시글 번호를 입력해주세요.' },
             { id: 'contact', message: '연락처를 입력해주세요.' },
             { id: 'password', message: '비밀번호를 입력해주세요.' }
         ];
+    } else if (isServicePage) {
+        requiredFields = [
+            { id: 'writer', message: '작성자 이름을 입력해주세요.' },
+            { id: 'contact', message: '연락처를 입력해주세요.' },
+            { id: 'company', message: '회사명을 입력해주세요.' },
+            { id: 'email', message: '이메일 주소를 입력해주세요.' },
+            { id: 'service-value', message: '모집분야를 선택해주세요.' },
+            { id: 'title', message: '제목을 입력해주세요.' },
+            { id: 'content', message: '문의 내용을 입력해주세요.' }
+        ];
+    }
 
-        // 1. 연락처 필터링
+    // 1-1. 공통 입력 필터링 및 길이 제한 
+    if (isVocSubmitPage || isVocCheckPage || isServicePage) {
         $('#contact').on('input', function() {
             var sanitizedValue = $(this).val().replace(/[^0-9]/g, '');
             $(this).val(sanitizedValue);
         });
-        
     }
 
-    // 3. 폼 제출 시 유효성 검사 (공통 로직)
-    $('.voc-form').on('submit', function(event) {
-        event.preventDefault();
-
-        // 필수 항목 누락 검사
-        for (var i = 0; i < requiredFields.length; i++) {
-            var field = requiredFields[i];
-            var fieldValue = $('#' + field.id).val();
-            if (!fieldValue || fieldValue.trim() === '') {
-                showModal('필수 항목 누락', field.message, field.id);
-                return false;
+    if (isVocSubmitPage || isServicePage) {
+        $('#content').on('input', function() {
+            var maxLength = 800;
+            if ($(this).val().length > maxLength) {
+                $(this).val($(this).val().substring(0, maxLength));
             }
-        }
-        
-        // 이메일 형식 검사
-        if (isSubmitPage) {
-            var emailInput = $('#email');
-            var emailValue = emailInput.val();
-            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
+        });
+    }
 
-            if (!emailRegex.test(emailValue)) {
-                showModal('입력 오류', '이메일 주소를 올바른 형식으로 입력해주세요.', 'email');
-                return false;
+
+    // ===================================
+    // 2. 폼 제출 시 유효성 검사 (공통 로직)
+    // ===================================
+    
+    if (requiredFields.length > 0) {
+        $('.voc-form').on('submit', function(event) {
+            event.preventDefault();
+
+            // 2-1. 필수 항목 누락 검사
+            for (var i = 0; i < requiredFields.length; i++) {
+                var field = requiredFields[i];
+                var fieldValue = $('#' + field.id).val();
+                
+                // 드롭다운의 초기 값 ('') 검사
+                if (field.id === 'service-value' && (!fieldValue || fieldValue.trim() === '')) {
+                    showModal('필수 항목 누락', field.message, field.id);
+                    return false;
+                }
+
+                if (field.id !== 'service-value' && (!fieldValue || fieldValue.trim() === '')) {
+                    showModal('필수 항목 누락', field.message, field.id);
+                    return false;
+                }
             }
-        }
+            
+            // 2-2. 페이지별 추가 검사 
+            if (isVocSubmitPage || isServicePage) {
+                
+                // 이메일 형식 검사 
+                var emailInput = $('#email');
+                var emailValue = emailInput.val();
+                var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; 
 
-        this.submit();
+                if (!emailRegex.test(emailValue)) {
+                    showModal('입력 오류', '이메일 주소를 올바른 형식으로 입력해주세요.', 'email');
+                    return false;
+                }
+
+                if (isServicePage) {
+                    if (!$('#privacy-agree').prop('checked')) {
+                        showModal('필수 항목 미동의', '개인정보 이용약관에 동의하지 않았습니다.', 'privacy-agree');
+                        return false;
+                    }
+                }
+            }
+            
+            // 2-3. 모든 검사 통과 시 최종 성공 메시지 분기
+            if (isVocSubmitPage) {
+                // 민원 접수 페이지 성공 메시지 
+                showModal(
+                    '민원 접수', 
+                    '고객님의 민원이 정상적으로\n등록되었습니다.', 
+                    null
+                );
+            } else if (isServicePage) {
+                // 서비스 신청 페이지 성공 메시지
+                showModal(
+                    '신청 접수', 
+                    '고객님의 서비스 이용 및 상담 신청이\n정상적으로 전송되었습니다.', 
+                    null
+                );
+            }
+            
+            // 실제 서버에 폼을 전송하려면 아래 주석을 해제
+            // this.submit(); 
+        });
+    }
+});
+
+// -------------------
+// 드롭다운 메뉴 
+// -------------------
+
+$(document).ready(function() {
+    const $customSelect = $('.custom-select');
+
+    // 1. 드롭다운 토글 기능
+    $customSelect.find('.select-display').on('click', function() {
+        const $parent = $(this).closest('.custom-select');
+        $parent.toggleClass('is-open');
+    });
+
+    // 2. 항목 선택 시 값 업데이트 및 드롭다운 닫기
+    $customSelect.find('.select-options li').on('click', function() {
+        const $li = $(this);
+        const selectedText = $li.text();
+        const selectedValue = $li.data('value');
+        const $parent = $li.closest('.custom-select');
+
+        // 선택된 항목 클래스 업데이트
+        $parent.find('.select-options li').removeClass('selected');
+        $li.addClass('selected');
+
+        // 화면에 표시되는 값과 숨겨진 input 값 업데이트
+        $parent.find('.selected-value').text(selectedText);
+        $parent.find('input[type="hidden"]').val(selectedValue);
+
+        // 드롭다운 닫기
+        $parent.removeClass('is-open');
+    });
+
+    // 3. 외부 클릭 시 드롭다운 닫기
+    $(document).on('click', function(e) {
+        if (!$customSelect.is(e.target) && $customSelect.has(e.target).length === 0) {
+            $customSelect.removeClass('is-open');
+        }
+    });
+
+    // 4. 초기 값 설정
+    $customSelect.each(function() {
+        // 초기 값으로 첫 번째 항목의 텍스트와 값을 설정
+        const $firstItem = $(this).find('.select-options li:first');
+        if ($firstItem.length) {
+            const initialText = $firstItem.text();
+            const initialValue = $firstItem.data('value');
+            
+            $(this).find('.selected-value').text(initialText);
+            $(this).find('input[type="hidden"]').val(initialValue);
+            // 첫 번째 항목에 'selected' 클래스 추가 
+            $firstItem.addClass('selected'); 
+        }
+    });
+});
+
+// -------------------
+// 드롭다운 메뉴
+// -------------------
+
+
+$(document).ready(function() {
+    const $customSelect = $('.custom-select');
+
+    // 1. 드롭다운 토글 기능
+    $customSelect.find('.select-display').on('click', function() {
+        // 현재 드롭다운의 is-open 클래스 토글
+        const $parent = $(this).closest('.custom-select');
+        $parent.toggleClass('is-open');
+    });
+
+    // 2. 항목 선택 시 값 업데이트 및 드롭다운 닫기
+    $customSelect.find('.select-options li').on('click', function() {
+        const $li = $(this);
+        const selectedText = $li.text();
+        const selectedValue = $li.data('value');
+        const $parent = $li.closest('.custom-select');
+
+        // 선택된 항목 클래스 업데이트
+        $parent.find('.select-options li').removeClass('selected');
+        $li.addClass('selected');
+
+        // 화면에 표시되는 값과 숨겨진 input 값 업데이트
+        $parent.find('.selected-value').text(selectedText);
+        $parent.find('input[type="hidden"]').val(selectedValue);
+
+        // 드롭다운 닫기
+        $parent.removeClass('is-open');
+    });
+
+    // 3. 외부 클릭 시 드롭다운 닫기
+    $(document).on('click', function(e) {
+        if (!$customSelect.is(e.target) && $customSelect.has(e.target).length === 0) {
+            $customSelect.removeClass('is-open');
+        }
+    });
+
+    // 초기 값 설정
+    $customSelect.each(function() {
+        const $firstItem = $(this).find('.select-options li:first');
+        if ($firstItem.length) {
+            const initialText = $firstItem.text();
+            const initialValue = $firstItem.data('value');
+            
+            $(this).find('.selected-value').text(initialText);
+            $(this).find('input[type="hidden"]').val(initialValue);
+            $firstItem.addClass('selected');
+        }
     });
 });
