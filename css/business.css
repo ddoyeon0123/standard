@@ -132,6 +132,8 @@
     font-weight: var(--font-weight-regular);
 }
 
+/* 원형 오브젝트 */
+
 .vision-circle-area {
     display: flex;
     justify-content: center;
