@@ -185,3 +185,36 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     z-index: 10;
 }
+
+/* 다운 섹션 */
+
+.cta-download-section {
+    text-align: center;
+    padding: 60px 0 100px;
+}
+
+.cta-text {
+    font-size: var(--font-title-medium);
+    color: var(--color-gray-5);
+    margin-bottom: 30px;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 13px 70px;
+    border: 1px solid var(--color-gray-3);
+    border-radius: 50px;
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: var(--font-headline-small);
+    font-weight: var(--font-weight-medium);
+    transition: all 0.3s;
+    background-color: var(--color-white);
+}
+
+.btn-download:hover {
+    background-color: var(--color-navy);
+    color: var(--color-white);
+    border-color: var(--color-navy);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
