@@ -312,3 +312,21 @@ $(document).ready(function() {
         }
     });
 });
+
+
+// -------------------
+// 연혁 탭 이동
+// -------------------
+
+
+$('.history-tabs li').click(function() {
+    const tabId = $(this).attr('data-tab');
+
+    // 탭 메뉴 활성화 변경
+    $('.history-tabs li').removeClass('active');
+    $(this).addClass('active');
+
+    // 컨텐츠 전환
+    $('.history-tab-content').removeClass('active');
+    $('#' + tabId).addClass('active');
+});
