@@ -1,0 +1,128 @@
+/* =======================================
+    경영이념 페이지 스타일 (business_vision.html)
+   ======================================= */
+
+.hero-section {
+    position: relative;
+    height: 168px;
+    background: url('../../img/business/company_banner.jpg') no-repeat center/cover;
+}
+
+.hero-overlay {
+    width: var(--container-max-width);
+    margin: 0 auto;
+}
+
+.hero-text-box {
+    padding: 160px 0 50px;
+    width: var(--container-max-width);
+    margin: 0 auto;
+    color: var(--color-black);
+}
+
+.hero-main-title {
+    text-align: left;
+    font-size: var(--font-display-large);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.vision-container {
+    max-width: var(--container-max-width);
+    margin: 100px auto;
+    padding: 0 82px;
+}
+
+.page-title-box {
+    border-bottom: 1px solid var(--color-gray-2);
+    padding-bottom: 35px;
+    margin-bottom: 60px;
+}
+
+.page-title {
+    font-size: var(--font-headline-large);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black);
+    margin-bottom: 15px;
+}
+
+.page-subtitle {
+    font-size: var(--font-title-large);
+    color: var(--color-gray-5);
+    font-weight: var(--font-weight-regular);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.feature-card {
+    background: var(--color-white);
+    padding: 50px 30px;
+    border: 1px solid var(--color-gray-1);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-navy);
+}
+
+.card-icon {
+    background-color: var(--color-navy);
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-white);
+}
+
+.card-icon .material-icons-round {
+    font-size: 36px;
+}
+
+.feature-card h4 {
+    font-size: var(--font-title-large);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 18px;
+    color: var(--color-black);
+}
+
+.feature-card p {
+    font-size: var(--font-title-small);
+    color: var(--color-gray-6);
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background: var(--color-gray-2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--color-navy);
+    width: 30px;
+    border-radius: 10px;
+}
+
