@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="voc-container detail-view">
-                    <div class="voc-status-wrapper step2">
+                    <div class="voc-status-wrapper step1">
                         <div class="status-message-box">
                             <p class="status-sub">현재 '<span class="status-name">문의</span>' 단계입니다.</p>
                             <h2 class="status-main">고객님의 문의 내용이 정상적으로 <span class="status-action">등록되었습니다.</span></h2>
@@ -82,7 +82,7 @@
                     </div>
 
                     <div class="voc-detail-content">
-                        <h3 class="user-info-title"><span class="user-name">홍길동</span> 님의 민원 내역입니다.</h3>
+                        <h3 class="user-info-title"><span class="user-name" id="voc-writer">홍길동</span> 님의 민원 내역입니다.</h3>
 
                         <div class="detail-box">
                             <table class="detail-table">
@@ -93,27 +93,27 @@
                                 <tbody>
                                     <tr>
                                         <th>작성자</th>
-                                        <td class="user-name">홍길동</td>
+                                        <td id="voc-writer">홍길동</td>
                                     </tr>
                                     <tr>
                                         <th>게시글 번호</th>
-                                        <td>12345</td>
+                                        <td id="voc-id">12345</td>
                                     </tr>
                                     <tr>
                                         <th>연락처</th>
-                                        <td>01012345678</td>
+                                        <td id="voc-phone">01012345678</td>
                                     </tr>
                                     <tr>
                                         <th>이메일</th>
-                                        <td>gildong123@gmail.com</td>
+                                        <td id="voc-email">gildong123@gmail.com</td>
                                     </tr>
                                     <tr>
                                         <th>제목</th>
-                                        <td>무통장입금 계좌번호</td>
+                                        <td id="voc-title">무통장입금 계좌번호</td>
                                     </tr>
                                     <tr class="content-row">
                                         <th>내용</th>
-                                        <td class="content-text">
+                                        <td class="content-text" id="voc-content">
                                             오늘 캐쉬 충전 무통장 입금 신청을 했는데<br>
                                             계좌번호 확인을 못했습니다.<br>
                                             답변 부탁드리겠습니다.
@@ -122,7 +122,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <p class="submit-date">문의 날짜 : 2025-11-24 13:27:37</p>
+                        <p class="submit-date">문의 날짜 : <span id="voc-reg-date">2025-11-24 13:27:37</span></p>
                     </div>
                 </div>
             </div>
