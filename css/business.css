@@ -186,11 +186,10 @@
     z-index: 10;
 }
 
-/* 다운 섹션 */
+/* 다운로드 섹션 */
 
 .cta-download-section {
     text-align: center;
-    padding: 60px 0 100px;
 }
 
 .cta-text {
@@ -218,3 +217,8 @@
     border-color: var(--color-navy);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+
+/* =======================================
+    연혁 페이지 (business_history.html)
+   ======================================= */
+
