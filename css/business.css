@@ -7,7 +7,7 @@
 .hero-section {
     position: relative;
     height: 168px;
-    background: url('../../img/business/company_banner.jpg') no-repeat center/cover;
+    background: url('../img/business/company_banner.jpg') no-repeat center/cover;
 }
 
 .hero-overlay {
