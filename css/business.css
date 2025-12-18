@@ -94,7 +94,7 @@
     display: flex;
     align-items: flex-end;
     gap: 50px; 
-    margin-bottom: 80px;
+    margin-bottom: 60px;
 }
 
 .page-main {
@@ -269,8 +269,8 @@
 
 .history-row {
     display: flex;
-    padding: 40px 0;
-    border-bottom: 1px solid var(--color-gray-1);
+    padding: 60px 0 0 0;
+    border-bottom: none;
 }
 
 .history-year {
@@ -279,31 +279,35 @@
     font-weight: 700;
     color: var(--color-black);
     flex-shrink: 0;
-    display: flex;
-    align-items: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #333;
+    align-self: flex-start;
 }
-
 
 
 .history-list {
     flex-grow: 1;
     list-style: none;
+    margin-left: 40px;
 }
 
 .history-list li {
+    display: flex;
+    align-items: flex-start;
     font-size: 17px;
     line-height: 1.8;
     color: var(--color-gray-7);
-    margin-bottom: 15px;
+    padding: 15px 0 15px 20px;
+    border-bottom: 1px solid var(--color-gray-2);
     position: relative;
-    padding-left: 20px;
 }
+
 
 .history-list li::before {
     content: '';
     position: absolute;
     left: 0;
-    top: 12px;
+    top: 26px;
     width: 4px;
     height: 4px;
     background-color: var(--color-gray-4);
@@ -311,7 +315,17 @@
 }
 
 .history-list li span {
-    font-weight: 700;
     color: var(--color-gray-8);
-    margin-right: 15px;
+    width: 50px; 
+    flex-shrink: 0;
+    margin-right: 10px;
 }
+
+.history-desc p {
+    margin-bottom: 5px;
+}
+
+.history-desc p:last-child {
+    margin-bottom: 0;
+}
+

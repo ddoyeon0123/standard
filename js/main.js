@@ -330,3 +330,53 @@ $('.history-tabs li').click(function() {
     $('.history-tab-content').removeClass('active');
     $('#' + tabId).addClass('active');
 });
+
+
+// -------------------
+// 연혁 json 붙이기
+// -------------------
+
+$(document).ready(function () {
+    $.getJSON('../../json/history.json', function (data) {
+        
+        function renderHistory(tabId) {
+            const tabData = data.find(item => item.category === tabId);
+            const $container = $('#' + tabId); 
+
+            if (!tabData) return;
+
+            let html = '';
+            tabData.years.forEach(item => {
+                html += `
+                    <div class="history-row">
+                        <div class="history-year">${item.year}</div>
+                        <ul class="history-list">
+                            ${item.list.map(entry => `
+                                <li>
+                                    <span>${entry.month}</span>
+                                    <div class="history-desc">
+                                        ${entry.text.map(t => `<p>${t}</p>`).join('')}
+                                    </div>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>`;
+            });
+            
+            $container.html(html);
+        }
+        renderHistory('tab1');
+
+        $('.history-tabs li').on('click', function () {
+            const tabId = $(this).attr('data-tab');
+            
+            $('.history-tabs li').removeClass('active');
+            $(this).addClass('active');
+            $('.history-tab-content').removeClass('active');
+            $('#' + tabId).addClass('active');
+            renderHistory(tabId);
+        });
+    }).fail(function() {
+        console.error("JSON 파일을 불러오는 데 실패했습니다.");
+    });
+});
