@@ -380,3 +380,26 @@ $(document).ready(function () {
         console.error("JSON 파일을 불러오는 데 실패했습니다.");
     });
 });
+
+
+$(document).ready(function () {
+    $.getJSON('../../json/patent.json', function (data) {
+        let html = '';
+        data.forEach(item => {
+            html += `
+                <div class="history-row">
+                    <div class="history-year">${item.year}</div>
+                    <ul class="history-list">
+                        ${item.list.map(text => `
+                            <li>
+                                <div class="history-desc">
+                                    <p>${text}</p>
+                                </div>
+                            </li>
+                        `).join('')}
+                    </ul>
+                </div>`;
+        });
+        $('#patent-container').html(html);
+    });
+});
