@@ -333,7 +333,7 @@ $('.history-tabs li').click(function() {
 
 
 // -------------------
-// 연혁 json 붙이기
+// 연혁 데이터 불러오기
 // -------------------
 
 $(document).ready(function () {
@@ -401,5 +401,32 @@ $(document).ready(function () {
                 </div>`;
         });
         $('#patent-container').html(html);
+    });
+});
+
+// 고객사 데이터 불러오기
+
+$(document).ready(function () {
+    $.getJSON('../../json/clients.json', function (data) {
+        let html = '';
+
+        data.forEach(section => {
+            html += `
+                <section class="client-section">
+                    <h2 class="section-title">${section.category}</h2>
+                    <div class="client-grid">
+                        ${section.list.map(client => `
+                            <div class="client-item ${client.isActive ? 'active' : ''}">
+                                <img src="../../img/about/${client.img}" alt="${client.name}">
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `;
+        });
+
+        $('#client-data-container').html(html);
+    }).fail(function() {
+        console.error("고객사 데이터를 불러오는 데 실패했습니다.");
     });
 });

@@ -1,0 +1,55 @@
+[
+  {
+    "category": "금융 분야",
+    "list": [
+      {"name": "신한은행", "img": "client_01.jpg"},
+      {"name": "우리은행", "img": "client_02.jpg"},
+      {"name": "NH농협", "img": "client_03.jpg"},
+      {"name": "부산은행", "img": "client_04.jpg"},
+      {"name": "citibank", "img": "client_05.jpg"},
+      {"name": "수협", "img": "client_06.jpg"},
+      {"name": "Standard Chartered", "img": "client_07.jpg"},
+      {"name": "HSBC", "img": "client_08.jpg"},
+      {"name": "교보생명", "img": "client_09.jpg"},
+      {"name": "KB생명", "img": "client_10.jpg"},
+      {"name": "미래에셋생명", "img": "client_11.jpg"},
+      {"name": "동부증권", "img": "client_12.jpg"},
+      {"name": "신영증권", "img": "client_13.jpg"}
+    ]
+  },
+  {
+    "category": "공공 분야",
+    "list": [
+      {"name": "국세청", "img": "client_14.jpg"},
+      {"name": "한국고용정보원", "img": "client_15.jpg"},
+      {"name": "고용노동부", "img": "client_16.jpg"},
+      {"name": "우정사업본부", "img": "client_17.jpg"},
+      {"name": "한국교직원공제회", "img": "client_18.jpg"}
+    ]
+  },
+  {
+    "category": "통신 / IT 분야",
+    "list": [
+      {"name": "SK broadband", "img": "client_19.jpg"},
+      {"name": "kt powertel", "img": "client_20.jpg"},
+      {"name": "더존", "img": "client_21.jpg"},
+      {"name": "Daum", "img": "client_22.jpg"},
+      {"name": "ADT캡스", "img": "client_23.jpg"},
+      {"name": "동부CNI", "img": "client_24.jpg"},
+      {"name": "드림시큐리티", "img": "client_25.jpg"},
+      {"name": "INITECH", "img": "client_26.jpg"},
+      {"name": "현대 C&C", "img": "client_27.jpg"},
+      {"name": "NETIAN", "img": "client_28.jpg"}
+    ]
+  },
+  {
+    "category": "유통 / 서비스 분야",
+    "list": [
+      {"name": "THE SHILLA", "img": "client_29.jpg"},
+      {"name": "KOREAN AIR", "img": "client_30.jpg"},
+      {"name": "E-LAND RETAIL", "img": "client_31.jpg"},
+      {"name": "하나로클럽", "img": "client_32.jpg"},
+      {"name": "master card", "img": "client_33.jpg"}
+    ]
+  }
+]
