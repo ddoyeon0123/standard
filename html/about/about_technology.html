@@ -2,7 +2,7 @@
 <html lang="ko">
 
 <head>
-    <title>경영이념 | 스탠다드네트웍스</title>
+    <title>보유기술 및 특허 | 스탠다드네트웍스</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,7 +15,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../../favicon.ico" type="image/x-icon">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"
         integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous">
@@ -23,20 +23,20 @@
 </head>
 
 <body>
+    <!-- header -->
     <div class="sn-header-wrapper">
         <header class="sn-header">
             <a href="../../index.html">
                 <img src="../../img/gnb_logo.png" alt="STANDARD NETWORKS 로고">
             </a>
             <nav class="sn-nav">
-                <a href="../about.html">회사소개</a>
+                <a href="../about/about_vision.html">회사소개</a>
                 <a href="../business.html">사업분야</a>
             </nav>
         </header>
     </div>
 
     <div id="wrap">
-
         <section class="hero-overlay">
             <div class="hero-text-box">
                 <h1 class="hero-main-title">연결 그 이상의 가치 <br> 스탠다드 네트웍스</h1>
@@ -44,11 +44,11 @@
 
             <nav class="hero-sub-nav">
                 <ul>
-                    <li class="active"><a href="./business_vision.html">경영이념</a></li>
-                    <li><a href="./business_history.html">연혁</a></li>
-                    <li><a href="./business_technology.html">보유기술 및 특허</a></li>
-                    <li><a href="./business_clients.html">주요 고객사</a></li>
-                    <li><a href="./business_location.html">오시는 길</a></li>
+                    <li><a href="./about_vision.html">경영이념</a></li>
+                    <li class="active"><a href="./about_history.html">연혁</a></li>
+                    <li><a href="./about_technology.html">보유기술 및 특허</a></li>
+                    <li><a href="./about_clients.html">주요 고객사</a></li>
+                    <li><a href="./about_location.html">오시는 길</a></li>
                 </ul>
             </nav>
         </section>
@@ -61,51 +61,35 @@
             <div class="vision-container">
                 <div class="page-title-box">
                     <div class="page-main">
-                        <h1 class="page-small-title">경영이념 ⬥</h1>
-                        <h1 class="page-title">고객이 변화하고<br>있습니다. </h1>
-                    </div>
-                    <div class="title-desc">
-                        <p class="page-subtitle">고객은 브랜드로부터 더 많은 참여 기회와 상호작용을 원합니다. <br>이제 브랜드는 디지털 채널을 적극적으로 도입하며,<br>
-                            양방향 커뮤니케이션으로 전환하고 있습니다.</p>
+                        <h1 class="page-small-title">연혁 ⬥</h1>
                     </div>
                 </div>
 
-                <section class="vision-circle-area">
-                    <div class="vision-circle circle-1">
-                        <div class="circle-content">
-                            <h3>양방향 대화</h3>
-                            <span class="material-icons-round">forum</span>
-                            <p>소셜 미디어 시대,<br>양방향 대화를 위한<br>실행 도구가 필요합니다.</p>
-                        </div>
-                    </div>
 
-                    <div class="vision-circle circle-2">
-                        <div class="circle-content">
-                            <h3>옴니채널 활용</h3>
-                            <span class="material-icons-round">hub</span>
-                            <p>다 채널 고객 경험을 위해,<br>고객 중심 의사결정을 지원하는<br>대화 플랫폼이 필요합니다.</p>
-                        </div>
-                    </div>
+                <nav class="history-tabs">
+                    <ul>
+                        <li class="active" data-tab="tab1">2016 - 2025</li>
+                        <li data-tab="tab2">2011 - 2015</li>
+                        <li data-tab="tab3">2006 - 2010</li>
+                        <li data-tab="tab4">1999 - 2005</li>
+                    </ul>
+                </nav>
 
-                    <div class="vision-circle circle-3">
-                        <div class="circle-content">
-                            <h3>크로스 채널 분석</h3>
-                            <span class="material-icons-round">alt_route</span>
-                            <p>보유한 데이터를<br>개인화된 실행으로 바꾸고<br>적합한 분석 도구가 필요합니다.</p>
-                        </div>
+                <div class="history-content-wrap">
+                    <div class="history-content-wrap">
+                        <section id="tab1" class="history-tab-content active"></section>
+                        <section id="tab2" class="history-tab-content"></section>
+                        <section id="tab3" class="history-tab-content"></section>
+                        <section id="tab4" class="history-tab-content"></section>
                     </div>
-                </section>
-
-                <section class="cta-download-section">
-                    <p class="cta-text">스탠다드 네트웍스의 비전과 솔루션을 자세히 알고 싶으시다면,</p>
-                    <a href="../../file/std_company_info.pdf" class="btn-download" download="스탠다드네트웍스_회사소개서.pdf">
-                        회사 소개서 다운받기
-                    </a>
-                </section>
+                </div>
+                
+                
             </div>
         </main>
     </div>
 
+    <!-- footer -->
     <footer class="sn-footer">
         <div class="footer-wrap">
             <div class="footer-logo">
