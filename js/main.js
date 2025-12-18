@@ -381,6 +381,9 @@ $(document).ready(function () {
     });
 });
 
+// -------------------
+// 보유 기술 데이터 불러오기
+// -------------------
 
 $(document).ready(function () {
     $.getJSON('../../json/patent.json', function (data) {
@@ -404,7 +407,9 @@ $(document).ready(function () {
     });
 });
 
+// -------------------
 // 고객사 데이터 불러오기
+// -------------------
 
 $(document).ready(function () {
     $.getJSON('../../json/clients.json', function (data) {
@@ -429,26 +434,4 @@ $(document).ready(function () {
     }).fail(function() {
         console.error("고객사 데이터를 불러오는 데 실패했습니다.");
     });
-});
-
-$(document).ready(function() {
-    var mapContainer = document.getElementById('map');
-    
-    if (mapContainer && typeof kakao !== 'undefined') {
-        kakao.maps.load(function() {
-            var mapOption = {
-                center: new kakao.maps.LatLng(37.5012304, 127.027505),
-                level: 3 
-            };
-            var map = new kakao.maps.Map(mapContainer, mapOption); 
-            var markerPosition = new kakao.maps.LatLng(37.5012304, 127.027505); 
-            var marker = new kakao.maps.Marker({ position: markerPosition });
-            marker.setMap(map);
-
-            var infowindow = new kakao.maps.InfoWindow({
-                content: '<div style="width:150px;text-align:center;padding:6px 0;font-size:14px;">스탠다드네트웍스</div>'
-            });
-            infowindow.open(map, marker);
-        });
-    }
 });
