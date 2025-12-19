@@ -308,7 +308,7 @@ body {
 .hero-section2 {
     position: relative;
     height: 168px;
-    background: url('../img/about/business_banner.jpg') no-repeat center/cover;
+    background: url('../img/business/business_banner.jpg') no-repeat center/cover;
 }
 
 .hero-overlay {
@@ -382,4 +382,46 @@ body {
 
 .hero-sub-nav ul li.active a::after {
     width: 100%; 
+}
+
+.page-title-box {
+    display: flex;
+    align-items: flex-end;
+    gap: 50px; 
+    margin-bottom: 70px;
+}
+
+.page-main {
+    flex-shrink: 0;
+}
+
+.page-small-title {
+    font-size: var(--font-title-large);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: 25px;
+}
+
+.title-desc {
+    padding-left: 40px; 
+    border-left: 1px solid var(--color-gray-2);
+}
+
+.title-desc p {
+    font-size: var(--font-title-large);
+    color: var(--color-gray-4);
+    line-height: 1.6;
+    word-break: keep-all;
+}
+
+.page-title {
+    font-size: var(--font-display-medium);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-black);
+    line-height: 5.3rem;
+}
+
+.page-subtitle {
+    font-size: var(--font-title-large);
+    color: var(--color-gray-5);
+    font-weight: var(--font-weight-regular);
 }

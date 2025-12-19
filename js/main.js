@@ -434,3 +434,19 @@ $(document).ready(function () {
         console.error("고객사 데이터를 불러오는 데 실패했습니다.");
     });
 });
+
+// -------------------
+// 모바일 페이지 nav
+// -------------------
+
+$('.mobile-tabs li').click(function() {
+    const tabId = $(this).attr('data-tab');
+
+    // 탭 메뉴 활성화 변경
+    $('.mobile-tabs li').removeClass('active');
+    $(this).addClass('active');
+
+    // 컨텐츠 전환
+    $('.mobile-tab-content').removeClass('active');
+    $('#' + tabId).addClass('active');
+});

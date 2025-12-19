@@ -8,7 +8,7 @@
 
     <link rel="stylesheet" type="text/css" href="../../css/reset.css">
     <link rel="stylesheet" type="text/css" href="../../css/common.css">
-    <link rel="stylesheet" type="text/css" href="../../css/about.css">
+    <link rel="stylesheet" type="text/css" href="../../css/business.css">
     <link rel="stylesheet" type="text/css" href="../../css/responsive.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,54 +56,110 @@
         <div class="hero-section2">
         </div>
 
-
         <main>
-            <div class="vision-container">
+            <div class="mobile-container">
                 <div class="page-title-box">
                     <div class="page-main">
-                        <h1 class="page-small-title">경영이념 ⬥</h1>
-                        <h1 class="page-title">고객이 변화하고<br>있습니다. </h1>
+                        <h1 class="page-small-title">모바일 ⬥</h1>
+                        <h1 class="page-title">최고의 전문성을 <br>보장합니다. </h1>
                     </div>
                     <div class="title-desc">
-                        <p class="page-subtitle">고객은 브랜드로부터 더 많은 참여 기회와 상호작용을 원합니다. <br>이제 브랜드는 디지털 채널을 적극적으로 도입하며,<br>
-                            양방향 커뮤니케이션으로 전환하고 있습니다.</p>
+                        <p class="page-subtitle">8개 정부 및 20개 금융망 등 국내 최대 규모의 전문 인프라를 구축하고 있습니다. <br>
+                        마포와 서초 2개의 메시징 센터와 완벽한 이중 전송망을 통해 안정성을 보장합니다. <br>
+                        41개 이동망 CID 보유와 국내 최대 기간망 G/W 개발로 최적의 전송 능력을 제공합니다.</p>
                     </div>
                 </div>
 
-                <section class="vision-circle-area">
-                    <div class="vision-circle circle-1">
-                        <div class="circle-content">
-                            <h3>양방향 대화</h3>
-                            <span class="material-icons-round">forum</span>
-                            <p>소셜 미디어 시대,<br>양방향 대화를 위한<br>실행 도구가 필요합니다.</p>
-                        </div>
+                <nav class="mobile-tabs">
+                    <ul>
+                        <li class="active" data-tab="tab-sms">SMS MT/MO</li>
+                        <li data-tab="tab-mms">MMS MT/MO</li>
+                        <li data-tab="tab-sfa">SFA FFA</li>
+                    </ul>
+                </nav>
+
+                <div class="mobile-tab-wrapper">
+                    
+                    <div class="mobile-tab-content active" id="tab-sms">
+                        <section class="mobile-content-section">
+                            <h3 class="section-sub-title">SMS MO와 SMS MT의 개념</h3>
+                            <div class="concept-diagram">
+                                <img src="../../img/business/sms_concept_diagram.png" alt="SMS MT/MO 개념도">
+                            </div>
+                        </section>
+
+                        <section class="mobile-content-section">
+                            <div class="service-header">
+                                <h2 class="service-title">SMS MT 서비스</h2>
+                                <p class="service-intro">기업의 서버에서 사용자(휴대폰)에게 대량의 문자 메시지를 전송하는 서비스입니다.<br>
+                                    광고, 홍보, 알림 등 기업의 필수 커뮤니케이션을 위한 핵심 솔루션입니다.</p>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <h4 class="info-label">서비스 정의</h4>
+                                    <p class="info-text">기업이 이통사 구분 없이 대량의 문자 메시지를 무선 단말기(휴대폰, PDA)로 전송할 수 있는 서비스입니다.</p>
+                                </div>
+                                <div class="info-item">
+                                    <h4 class="info-label">서비스 제공 방식</h4>
+                                    <ul class="info-list">
+                                        <li><strong>기업형 SMS 서비스 :</strong> 통합 Java Agent 설치 후 DB Insert 방식으로 대량 전송을 처리하며, 높은 커스터마이징이 가능합니다.</li>
+                                        <li><strong>기업형 엑셀 메신저 :</strong> 엑셀 포맷으로 데이터를 작성하여 일괄 전송(대량 전송 가능)합니다. 별도의 연동 작업 없이 즉시 이용 가능합니다.</li>
+                                        <li><strong>프리미엄 서비스 :</strong> ASP 형태의 WEB LINK 방식으로, 고객사의 웹사이트와 연동하여 직접 정보 조회 서비스를 이용할 수 있습니다.</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="system-example">
+                                <h4 class="info-label">전송 시스템의 성능</h4>
+                                <div class="performance-box">
+                                    <img src="../../img/business/sms_performance.png" alt="전송 시스템 성능">
+                                </div>
+                            </div>
+                        </section>
+
+                        <section class="mobile-content-section">
+                            <div class="service-header">
+                                <h2 class="service-title">SMS MO 서비스</h2>
+                                <p class="service-intro">사용자가 휴대폰에서 작성한 문자 메시지를 기업의 시스템(웹)으로 수신하는 양방향 커뮤니케이션 서비스입니다.</p>
+                            </div>
+
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <h4 class="info-label">서비스 정의</h4>
+                                    <p class="info-text">휴대폰에서 작성된 문자 메시지(SMS)를 웹 기반 시스템으로 전송하는 양방향 서비스입니다.</p>
+                                </div>
+                                <div class="info-item">
+                                    <h4 class="info-label">서비스 기대 효과</h4>
+                                    <ol class="info-list numbered">
+                                        <li><strong>수익원 확보 :</strong> 서비스 이용료 및 이벤트 참여 수익 등 확실한 고수익 사업 모델 확보</li>
+                                        <li><strong>마케팅 효율 :</strong> 전체 휴대폰 사용자에 대한 광범위한 서비스 제공 및 타겟 마케팅 활용</li>
+                                        <li><strong>데이터 확보 :</strong> 서비스 이용자 DB 확보를 통한 CRM 데이터 축적 및 활용</li>
+                                        <li><strong>사업 영역 확대 :</strong> 고객 정보 기반의 새로운 사업 영역 및 서비스 확대 기회 마련</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </section>
                     </div>
 
-                    <div class="vision-circle circle-2">
-                        <div class="circle-content">
-                            <h3>옴니채널 활용</h3>
-                            <span class="material-icons-round">hub</span>
-                            <p>다 채널 고객 경험을 위해,<br>고객 중심 의사결정을 지원하는<br>대화 플랫폼이 필요합니다.</p>
-                        </div>
+                    <div class="mobile-tab-content" id="tab-mms">
+                        <section class="mobile-content-section">
+                            <h2 class="service-title">MMS MT/MO 서비스</h2>
+                            <p class="service-intro">멀티미디어 메시징 서비스 준비 중입니다.</p>
+                        </section>
                     </div>
 
-                    <div class="vision-circle circle-3">
-                        <div class="circle-content">
-                            <h3>크로스 채널 분석</h3>
-                            <span class="material-icons-round">alt_route</span>
-                            <p>보유한 데이터를<br>개인화된 실행으로 바꾸고<br>적합한 분석 도구가 필요합니다.</p>
-                        </div>
+                    <div class="mobile-tab-content" id="tab-sfa">
+                        <section class="mobile-content-section">
+                            <h2 class="service-title">SFA FFA 서비스</h2>
+                            <p class="service-intro">현장 자동화 솔루션 서비스 준비 중입니다.</p>
+                        </section>
                     </div>
-                </section>
 
-                <section class="cta-download-section">
-                    <p class="cta-text">스탠다드 네트웍스의 비전과 솔루션을 자세히 알고 싶으시다면,</p>
-                    <a href="../../file/std_company_info.pdf" class="btn-download" download="스탠다드네트웍스_회사소개서.pdf">
-                        회사 소개서 다운받기
-                    </a>
-                </section>
+                </div>
             </div>
         </main>
+
     </div>
 
     <footer class="sn-footer">

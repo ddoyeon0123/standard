@@ -2,86 +2,7 @@
     경영이념 페이지 (about_vision.html)
    ======================================= */
 
-/* 상단 배너 */
 
-.hero-section {
-    position: relative;
-    height: 168px;
-    background: url('../img/about/company_banner.jpg') no-repeat center/cover;
-}
-
-.hero-overlay {
-    width: var(--container-max-width);
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between; 
-    align-items: flex-end;
-    padding: 160px 0 50px;
-}
-
-.hero-text-box {
-    width: var(--container-max-width);
-    margin: 0 auto;
-    color: var(--color-black);
-}
-
-.hero-main-title {
-    text-align: left;
-    font-size: var(--font-display-large);
-    font-weight: 700;
-    line-height: 1.4;
-}
-
-
-.hero-sub-nav ul {
-    display: flex;
-    gap: 30px;
-    list-style: none;
-    padding-bottom: 10px;
-}
-
-.hero-sub-nav ul li {
-    position: relative;
-    width: auto;
-    white-space: nowrap;
-}
-
-.hero-sub-nav ul li a {
-    text-decoration: none;
-    font-size: var(--font-title-medium);
-    color: var(--color-gray-4); 
-    font-weight: 500;
-    padding-bottom: 4px;
-    display: inline-block;
-    transition: color 0.3s;
-}
-
-.hero-sub-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--color-black);
-    transition: width 0.3s ease; 
-}
-
-.hero-sub-nav ul li a:hover {
-    color: var(--color-black);
-}
-
-.hero-sub-nav ul li a:hover::after {
-    width: 100%; 
-}
-
-.hero-sub-nav ul li.active a {
-    color: var(--color-black);
-}
-
-.hero-sub-nav ul li.active a::after {
-    width: 100%; 
-}
 
 /* 내용 */
 
@@ -90,47 +11,7 @@
     margin: 70px auto;
 }
 
-.page-title-box {
-    display: flex;
-    align-items: flex-end;
-    gap: 50px; 
-    margin-bottom: 70px;
-}
 
-.page-main {
-    flex-shrink: 0;
-}
-
-.page-small-title {
-    font-size: var(--font-title-large);
-    font-weight: var(--font-weight-medium);
-    margin-bottom: 25px;
-}
-
-.title-desc {
-    padding-left: 40px; 
-    border-left: 1px solid var(--color-gray-2);
-}
-
-.title-desc p {
-    font-size: var(--font-title-large);
-    color: var(--color-gray-4);
-    line-height: 1.6;
-    word-break: keep-all;
-}
-
-.page-title {
-    font-size: var(--font-display-medium);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-black);
-    line-height: 5.3rem;
-}
-
-.page-subtitle {
-    font-size: var(--font-title-large);
-    color: var(--color-gray-5);
-    font-weight: var(--font-weight-regular);
-}
 
 /* 원형 오브젝트 */
 
