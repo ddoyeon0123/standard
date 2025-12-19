@@ -55,19 +55,19 @@
 }
 
 .section-sub-title {
-    font-size: 1.25rem;
-    color: var(--color-gray-7);
-    margin-bottom: 30px;
-    font-weight: 600;
+    display: inline;
+    font-size: var(--font-title-large);
+    color: var(--color-black);
+    margin-bottom: 60px;
+    font-weight: var(--font-weight-medium);
+    border-bottom: solid 1px var(--color-black);
 }
 
 .service-title {
-    font-size: 1.8rem;
+    font-size: var(--font-headline-large);
     color: var(--color-black);
     margin-bottom: 25px;
     font-weight: 700;
-    border-bottom: 2px solid var(--color-black);
-    display: inline-block;
     padding-bottom: 5px;
 }
 
@@ -107,4 +107,127 @@
 
 .concept-diagram img, .performance-box img {
     max-width: 100%;
+}
+
+
+.sms-flow-container {
+    padding: 30px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.flow-guide-image {
+    text-align: center;
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.flow-guide-image img {
+    width: 67px;
+    height: auto;
+}
+
+.guide-labels {
+    text-align: left;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: var(--font-title-medium);
+}
+
+.label-mt { color: var(--color-navy); } 
+.label-mo { color: var(--color-red); }
+
+.process-map {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sms-flow-container {
+    padding: 30px 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.flow-guide-image {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0 0 55px 10px; 
+}
+
+.flow-guide-image img {
+    width: 60px;
+    height: auto;
+}
+
+.guide-labels {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+    font-size: var(--font-title-medium);
+}
+
+.label-mt { color: var(--color-navy); } 
+.label-mo { color: var(--color-red); } 
+
+.process-map {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.process-step {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.step-card {
+    width: 160px; 
+    background-color: var(--color-gray-1); 
+    border-radius: 20px;
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+}
+
+.icon-area {
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-area img {
+    width: 80px; 
+    height: auto;
+}
+
+.step-name {
+    background-color: #cdcdcd; 
+    padding: 12px 5px;
+    font-size: var(--font-title-medium);
+    text-align: center;
+}
+
+.connector {
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.connector img {
+    width: 100%;
 }

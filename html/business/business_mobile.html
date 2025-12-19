@@ -65,8 +65,8 @@
                     </div>
                     <div class="title-desc">
                         <p class="page-subtitle">8개 정부 및 20개 금융망 등 국내 최대 규모의 전문 인프라를 구축하고 있습니다. <br>
-                        마포와 서초 2개의 메시징 센터와 완벽한 이중 전송망을 통해 안정성을 보장합니다. <br>
-                        41개 이동망 CID 보유와 국내 최대 기간망 G/W 개발로 최적의 전송 능력을 제공합니다.</p>
+                            마포와 서초 2개의 메시징 센터와 완벽한 이중 전송망을 통해 안정성을 보장합니다. <br>
+                            41개 이동망 CID 보유와 국내 최대 기간망 G/W 개발로 최적의 전송 능력을 제공합니다.</p>
                     </div>
                 </div>
 
@@ -79,12 +79,64 @@
                 </nav>
 
                 <div class="mobile-tab-wrapper">
-                    
                     <div class="mobile-tab-content active" id="tab-sms">
+
                         <section class="mobile-content-section">
                             <h3 class="section-sub-title">SMS MO와 SMS MT의 개념</h3>
                             <div class="concept-diagram">
-                                <img src="../../img/business/sms_concept_diagram.png" alt="SMS MT/MO 개념도">
+                                <div class="sms-flow-container">
+                                    <div class="flow-guide-image">
+                                        <img src="../../img/business/syncalt.svg" alt="SMS MT/MO Flow Guide" class="guide-svg">
+                                        <div class="guide-labels">
+                                            <span class="label-mt"><strong>SMS MT</strong> (Mobile Terminated)</span>
+                                            <span class="label-mo"><strong>SMS MO</strong> (Mobile Originated)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="process-map">
+                                        <div class="process-step">
+                                            <div class="step-card">
+                                                <div class="icon-area">
+                                                    <img src="../../img/business/icon_customer.svg" alt="고객사">
+                                                </div>
+                                                <div class="step-name">고객사</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="connector"><img src="../../img/business/syncalt.svg"></div>
+
+                                        <div class="process-step">
+                                            <div class="step-card">
+                                                <div class="icon-area">
+                                                    <img src="../../img/business/icon_database.svg" alt="Messaging Hub">
+                                                </div>
+                                                <div class="step-name">Messaging Hub</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="connector"><img src="../../img/business/syncalt.svg"></div>
+
+                                        <div class="process-step">
+                                            <div class="step-card">
+                                                <div class="icon-area">
+                                                    <img src="../../img/business/icon_telecom.svg" alt="이동통신사">
+                                                </div>
+                                                <div class="step-name">이동통신사</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="connector"><img src="../../img/business/syncalt.svg"></div>
+
+                                        <div class="process-step">
+                                            <div class="step-card">
+                                                <div class="icon-area">
+                                                    <img src="../../img/business/icon_phone.svg" alt="통신사 가입자">
+                                                </div>
+                                                <div class="step-name">통신사 가입자</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </section>
 
@@ -98,14 +150,18 @@
                             <div class="info-grid">
                                 <div class="info-item">
                                     <h4 class="info-label">서비스 정의</h4>
-                                    <p class="info-text">기업이 이통사 구분 없이 대량의 문자 메시지를 무선 단말기(휴대폰, PDA)로 전송할 수 있는 서비스입니다.</p>
+                                    <p class="info-text">기업이 이통사 구분 없이 대량의 문자 메시지를 무선 단말기(휴대폰, PDA)로 전송할 수 있는 서비스입니다.
+                                    </p>
                                 </div>
                                 <div class="info-item">
                                     <h4 class="info-label">서비스 제공 방식</h4>
                                     <ul class="info-list">
-                                        <li><strong>기업형 SMS 서비스 :</strong> 통합 Java Agent 설치 후 DB Insert 방식으로 대량 전송을 처리하며, 높은 커스터마이징이 가능합니다.</li>
-                                        <li><strong>기업형 엑셀 메신저 :</strong> 엑셀 포맷으로 데이터를 작성하여 일괄 전송(대량 전송 가능)합니다. 별도의 연동 작업 없이 즉시 이용 가능합니다.</li>
-                                        <li><strong>프리미엄 서비스 :</strong> ASP 형태의 WEB LINK 방식으로, 고객사의 웹사이트와 연동하여 직접 정보 조회 서비스를 이용할 수 있습니다.</li>
+                                        <li><strong>기업형 SMS 서비스 :</strong> 통합 Java Agent 설치 후 DB Insert 방식으로 대량 전송을
+                                            처리하며, 높은 커스터마이징이 가능합니다.</li>
+                                        <li><strong>기업형 엑셀 메신저 :</strong> 엑셀 포맷으로 데이터를 작성하여 일괄 전송(대량 전송 가능)합니다. 별도의 연동
+                                            작업 없이 즉시 이용 가능합니다.</li>
+                                        <li><strong>프리미엄 서비스 :</strong> ASP 형태의 WEB LINK 방식으로, 고객사의 웹사이트와 연동하여 직접 정보 조회
+                                            서비스를 이용할 수 있습니다.</li>
                                     </ul>
                                 </div>
                             </div>
@@ -144,14 +200,14 @@
 
                     <div class="mobile-tab-content" id="tab-mms">
                         <section class="mobile-content-section">
-                            <h2 class="service-title">MMS MT/MO 서비스</h2>
+                            <h2 class="section-sub-title">MMS MT/MO 서비스</h2>
                             <p class="service-intro">멀티미디어 메시징 서비스 준비 중입니다.</p>
                         </section>
                     </div>
 
                     <div class="mobile-tab-content" id="tab-sfa">
                         <section class="mobile-content-section">
-                            <h2 class="service-title">SFA FFA 서비스</h2>
+                            <h2 class="section-sub-title">SFA FFA 서비스</h2>
                             <p class="service-intro">현장 자동화 솔루션 서비스 준비 중입니다.</p>
                         </section>
                     </div>
