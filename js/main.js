@@ -338,11 +338,10 @@ $('.history-tabs li').click(function() {
 
 $(document).ready(function () {
     $.getJSON('../../json/history.json', function (data) {
-        
+
         function renderHistory(tabId) {
             const tabData = data.find(item => item.category === tabId);
             const $container = $('#' + tabId); 
-
             if (!tabData) return;
 
             let html = '';
