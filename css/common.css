@@ -390,6 +390,14 @@ body {
     gap: 50px; 
     margin-bottom: 70px;
 }
+.page-title-box-line {
+    display: flex;
+    align-items: flex-end;
+    gap: 50px; 
+    margin-bottom: 70px;
+    padding-bottom: 35px;
+    border-bottom: solid 1px var(--color-gray-3);
+}
 
 .page-main {
     flex-shrink: 0;
@@ -400,6 +408,8 @@ body {
     font-weight: var(--font-weight-medium);
     margin-bottom: 25px;
 }
+
+
 
 .title-desc {
     padding-left: 40px; 
@@ -425,3 +435,4 @@ body {
     color: var(--color-gray-5);
     font-weight: var(--font-weight-regular);
 }
+

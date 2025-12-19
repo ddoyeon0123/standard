@@ -469,3 +469,109 @@
 /* -------------- */
 /* AI 상담센터 */
 /* -------------- */
+
+
+.ai-service-container {
+    display: flex;
+    align-items: flex-start; 
+    justify-content: center;
+    padding: 50px 0;
+    gap: 40px;
+}
+
+.ai-process-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.ai-process-group .info-list.bullet-only {
+    margin-top: 25px;
+    padding-left: 0;
+    list-style: none;
+    text-align: left;
+    width: 100%;
+}
+
+.ai-process-group .info-small-list.bullet-only li {
+    color: var(--color-gray-5);
+    margin-bottom: 10px;
+    position: relative;
+    line-height: 1.5;
+}
+
+.ai-process-group .info-list.bullet-only li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--color-gray-4);
+}
+
+.ai-service-container .flow-arrow {
+    margin-top: 55px; 
+    color: var(--color-navy);
+}
+
+.info-small-list {
+    font-size: var(--font-title-medium);
+    line-height: 1.7;
+    list-style: disc;
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.ai-scenario-container {
+    padding: 40px 0;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.scenario-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.scenario-card {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.scenario-card.small {
+    min-width: 180px;
+}
+
+.step-num {
+    font-size: var(--font-title-medium);
+    font-weight: var(--font-weight-medium);
+    color: var(--color-gray-5);
+    text-align: left;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.screen-shot {
+    border: 1px solid #eee;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.screen-shot:hover {
+    transform: translateY(-4px);
+}
+
+.screen-shot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
