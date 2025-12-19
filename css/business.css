@@ -575,3 +575,89 @@
     display: block;
 }
 
+
+
+/* -------------- */
+/* phone number mail 서비스 */
+/* -------------- */
+
+.phone-mail-container {
+    padding: 40px 0;
+}
+
+.mail-flow-map {
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.step-card-phone {
+    width: 250px;
+    background-color: var(--color-gray-1);
+    border-radius: 20px;
+    overflow: hidden; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.step-card-phone .icon-area.list-area {
+    padding: 25px 20px;
+    min-height: 150px;  
+    display: flex;
+    align-items: flex-start; 
+    background-color: var(--color-gray-1);
+}
+
+.step-card-phone .step-name {
+    background-color: #cdcdcd; 
+    padding: 15px 5px;
+    font-size: var(--font-title-medium);
+    text-align: center;
+}
+
+.step-card-phone .icon-area.list-area .info-list.bullet-only {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.step-card-phone .icon-area.list-area .info-list.bullet-only li {
+    margin-left: 0; 
+    font-size: var(--font-title-small);
+    margin-bottom: 8px;
+    color: var(--color-gray-5);
+    line-height: 1.4;
+    position: relative;
+    list-style: none;
+}
+
+.flow-arrow.with-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.flow-arrow.with-text .label-text {
+    font-size: 13px;
+    line-height: 1.4;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--color-gray-7);
+    text-align: center;
+}
+
+.usage-list-area .usage-list {
+    text-align: left;
+}
+
+.usage-list-area .usage-list li {
+    margin-left: 0 !important; 
+    font-size: 16px;
+    margin-bottom: 12px;
+}
